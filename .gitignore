@@ -19,3 +19,6 @@ node_modules/
 
 # Claude Code 本機設定(不隨教材發布)
 .claude/
+
+# 提案簡報(內部用,不隨教材發布給學員)
+/proposal/
