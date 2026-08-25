@@ -23,6 +23,8 @@
 | `mcp-start-codelens.png` | `3-step.md` | `.vscode/mcp.json` 上方的 **Start** CodeLens |
 | `mcp-github-oauth.png` | `3-step.md` | VS Code 跳出的 GitHub 授權對話框 |
 | `agentic-workflow-pr.png` | `4-step.md` | Agent 自動建立出來的 Pull Request 頁面 |
+| `merge-pr.png` | `5-step.md` | PR 頁面的 **Merge pull request** 按鈕 |
+| `enable-pages.png` | `5-step.md` | Settings → Pages 的設定畫面 |
 
 ## 截圖建議
 
