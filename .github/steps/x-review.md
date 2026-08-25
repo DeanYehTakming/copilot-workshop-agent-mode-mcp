@@ -5,7 +5,24 @@
 - 一個**功能完整的待辦清單網頁 App**,而且從頭到尾沒有自己手打程式碼
 - 一份 **MCP 設定**,讓 AI 能查官方文件、讀你的 GitHub
 - 一份**可重複執行的劇本**,讓 AI 自動讀 issue → 改程式 → 開 PR
+- 一個**公開的作品網址**與作品集頁,可以直接放進履歷
 - 以及最重要的:**四種把 AI 搞砸的東西救回來的方法**
+
+---
+
+### 🏅 別忘了你的獎勵
+
+| | 獎勵 | 現在該做什麼 |
+| :---: | :--- | :--- |
+| 🏅 | **工作坊官方認證徽章** | 還沒填**完成登記表**的話,[**現在就去填**](https://github.com/matsurigoto/copilot-workshop-agent-mode-mcp/issues/new?template=workshop-completion.yml&labels=completion) —— 我們依名單發放,沒登記就拿不到 |
+| 🦈 | **YOLO** | 合併一個 PR 就有了。上面那則「徽章條件檢查」留言可以看你達成了沒 |
+| 🦈 | **Pull Shark** | 還差一個?再跑一次 `/fix-issue` 修下一個 issue,合併第二個 PR 就到手 |
+| 🌐 | **你的作品** | Pages 還沒開就回去 Settings → Pages 開一下,網址可以直接放履歷 |
+
+> ⏳ 徽章不是即時的,通常要幾分鐘到幾小時。
+> 沒出現的話先檢查:repo 是 **Public** 嗎?PR 是 **merged** 不是 closed 嗎?[個人設定](https://github.com/settings/profile)的 **Show Achievements on my profile** 勾了嗎?
+>
+> 📖 完整說明:[docs/badges.md](https://github.com/{{full_repo_name}}/blob/main/docs/badges.md)
 
 ---
 
@@ -154,7 +171,7 @@ MCP 常被形容成「**AI 的 USB-C**」—— 一個通用接頭。服務方�
 
 **這個 repo 是你的,留著繼續改。** 幾個建議方向:
 
-1. **把剩下的 issue 修完** —— 再跑兩次 `/fix-issue`,體會劇本的價值就在「第二次以後」
+1. **把剩下的 issue 修完** —— 再跑兩次 `/fix-issue`,體會劇本的價值就在「第二次以後」(順便把 🦈 Pull Shark 拿到手)
 2. **自己寫一個新劇本** —— 例如 `code-review.prompt.md`,讓 AI 用你的標準審查 PR
 3. **接更多 MCP Server** —— 試試 [Playwright MCP](https://github.com/microsoft/playwright-mcp),讓 AI 真的打開瀏覽器操作你的網頁並截圖驗證
 4. **建立自訂 agent** —— 在 `.github/agents/` 裡定義一個只做前端無障礙檢查的專屬 agent

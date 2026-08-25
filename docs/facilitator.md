@@ -9,6 +9,9 @@
 - [ ] 把 template repo 的網址寄給學員,附上 [環境準備清單](00-setup.md),請他們**前一天先裝好**
 - [ ] 提醒學生 / 教師身分的學員申請 [GitHub Education](https://education.github.com/discount_requests/application)(審核要幾天)
 - [ ] 自己**完整跑一次彩排**(見下方「彩排檢查表」)
+- [ ] 確認 template repo 的 **Issues 功能已開啟**(學員要來這裡填完成登記表)
+- [ ] 產生完成登記表的 **QR code**,放進投影片最後一頁
+- [ ] 向官方確認**認證徽章的發放方式與時程**,並更新 [`docs/badges.md`](badges.md) 的第一段
 - [ ] 確認場地網路能連 `github.com`、`api.githubcopilot.com`、`learn.microsoft.com`
 
 ## 📋 活動當天開場前
@@ -42,18 +45,31 @@
 
 | 掛鐘時間 | 應該在哪 | 落後的話 |
 | :--- | :--- | :--- |
-| **13:55** | 大家 repo 建好、clone 好、issue 出現 | 環境有問題的人先兩人一組 |
-| **14:25** | Step 1 完成(To-Do App 跑起來) | **這關最重要,寧可多花 5 分鐘** |
-| **14:45** | Step 2 完成 | 落後就把「四種還原方法」改成只講師示範,學員只做方法一 |
-| **15:15** | Step 3 完成(MCP 接上) | **這關也是重點**。GitHub MCP 接不上就只做 Microsoft Learn |
-| **15:35** | Step 4 完成 | 落後就直接用 `solutions/step-4/` 複製,講師示範 `/fix-issue` 執行過程 |
-| **15:40** | 測驗 + 收尾 | 測驗可以帶著念,或請學員回家自己做 |
+| **13:50** | 大家 repo 建好、clone 好、issue 出現 | 環境有問題的人先兩人一組 |
+| **14:20** | Step 1 完成(To-Do App 跑起來) | **這關最重要,寧可多花 5 分鐘** |
+| **14:40** | Step 2 完成 | 落後就把「四種還原方法」改成只講師示範,學員只做方法一 |
+| **15:10** | Step 3 完成(MCP 接上) | **這關也是重點**。GitHub MCP 接不上就只做 Microsoft Learn |
+| **15:30** | Step 4 完成 | 落後就直接用 `solutions/step-4/` 複製,講師示範 `/fix-issue` 執行過程 |
+| **15:40** | Step 5 完成(徽章 + 完成登記) | **絕對不能砍掉**。寧可犧牲 Step 2,也要留滿這 10 分鐘 |
 
 ### ⏰ 三個必須喊停的時間點
 
-- **14:25** — 不管 Step 1 有沒有做完,**喊停,統一用 solutions 補齊**,然後往下走
-- **15:15** — Step 3 一定要在這時結束,否則 Step 4 會做不完
-- **15:35** — 強制收尾,留 5 分鐘做測驗與總結
+- **14:20** — 不管 Step 1 有沒有做完,**喊停,統一用 solutions 補齊**,然後往下走
+- **15:10** — Step 3 一定要在這時結束,否則 Step 4 會做不完
+- **15:30** — Step 4 強制收尾,**把最後 10 分鐘完整留給 Step 5**
+
+### 🏅 Step 5 是最不能砍的一關
+
+很多講師在時間不夠時會砍掉最後一關 —— **這一場千萬不要**。Step 5 是唯一讓學員把東西帶走的環節:
+
+| 為什麼重要 | 說明 |
+| :--- | :--- |
+| **徽章靠登記發放** | 主辦方依登記名單發送官方認證徽章,**沒登記就拿不到** |
+| **登記表是唯一資料來源** | 完成名單、作品連結、測驗結果、課程回饋全部來自這份表單 |
+| **現場填表率決定一切** | 下課才提醒,回收率會掉一半以上 |
+
+**現場做法**:15:30 一到就把登記連結的 **QR code 投影出來**,唸出「填完再走」。
+資料用途與匯出方式見 [教學方取得的資訊](instructor-data.md)。
 
 ---
 
@@ -80,6 +96,23 @@ Restore Checkpoint 一定要**投影出來讓大家看到按鈕在哪裡**。
 
 > 「看到了嗎?它自己決定要用文件搜尋這個工具,自己組了查詢字串。
 > 我沒有告訴它要查什麼關鍵字。」
+
+### Step 5 示範重點:讓成果「帶得走」
+
+合併 PR 之後,投影出學員的 GitHub 個人資料頁:
+
+> 「注意看左邊 —— 這個 🦈 徽章是 **GitHub 官方發的**,不是我們自己畫的。
+> 它會一直留在你的個人資料上。」
+
+接著打開 GitHub Pages 網址:
+
+> 「這是一個公開網址,任何人都打得開。**它可以直接放進你的履歷。**」
+
+⚠️ **三件事一定要講清楚**,否則學員拿不到徽章:
+
+1. **repo 必須是 Public** —— GitHub Achievements 只計算公開 repo 的活動
+2. **PR 要 merge,不是 close** —— 這在 GitHub 上是兩種不同狀態
+3. **個人設定要勾選 Show Achievements on my profile**
 
 ### Step 4 示範重點:最後的「哇」
 
@@ -125,7 +158,10 @@ Restore Checkpoint 一定要**投影出來讓大家看到按鈕在哪裡**。
 - [ ] push `index.html` / `app.js` → Step 1 通過,Step 2 內容貼出
 - [ ] push `CHANGELOG.md` → Step 2 通過,Step 3 內容貼出
 - [ ] push `.vscode/mcp.json` → Step 3 通過,**三個 issue 被自動建立**,Step 4 內容貼出
-- [ ] push `.github/copilot-instructions.md` + `.github/prompts/fix-issue.prompt.md` → x-review 貼出,issue 被關閉
+- [ ] push `.github/copilot-instructions.md` + `.github/prompts/fix-issue.prompt.md` → Step 5 內容貼出
+- [ ] 合併一個 PR、開啟 Pages、push `PORTFOLIO.md` → **徽章條件檢查表**貼出、x-review 貼出、issue 被關閉
+- [ ] 完成登記表打得開,送出後產生帶 `completion` label 的 issue
+- [ ] `node scripts/export-completions.mjs` 能正常匯出 CSV 與成果牆
 - [ ] 任選一關測試**手動跳關**:Enable workflow → Run workflow → 確認能推進
 - [ ] 用 Copilot **免費版**帳號實跑一次,記錄實際額度消耗
 - [ ] Microsoft Learn MCP 能 Start 並列出工具

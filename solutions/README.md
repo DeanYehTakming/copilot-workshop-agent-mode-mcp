@@ -26,6 +26,7 @@
 | **Step 2** | `step-2/index.html`<br>`step-2/styles.css`<br>`step-2/app.js`<br>`step-2/CHANGELOG.md` | 專案**根目錄**(覆蓋 Step 1 的版本) |
 | **Step 3** | `step-3/mcp.json` | `.vscode/mcp.json` |
 | **Step 4** | `step-4/copilot-instructions.md`<br>`step-4/fix-issue.prompt.md` | `.github/copilot-instructions.md`<br>`.github/prompts/fix-issue.prompt.md` |
+| **Step 5** | `step-5/PORTFOLIO.md` | 專案**根目錄** |
 
 ---
 
@@ -56,6 +57,15 @@ mkdir -p .github/prompts
 cp solutions/step-4/copilot-instructions.md .github/copilot-instructions.md
 cp solutions/step-4/fix-issue.prompt.md .github/prompts/fix-issue.prompt.md
 ```
+
+### Step 5
+
+```bash
+cp solutions/step-5/PORTFOLIO.md .
+```
+
+> ⚠️ `PORTFOLIO.md` 裡有一行 GitHub Pages 網址是**佔位文字**,複製後請換成你自己的網址。
+> 檔案裡的相對連結是以**專案根目錄**為基準寫的,複製到根目錄後就會正確。
 
 > 🪟 **Windows 使用者**:上面的指令請在 **Git Bash** 執行。
 > 如果你用的是 PowerShell,把 `cp` 換成 `Copy-Item`、`mkdir -p X` 換成 `New-Item -ItemType Directory -Force X`,或直接在 VS Code 的檔案總管裡拖曳複製也可以。

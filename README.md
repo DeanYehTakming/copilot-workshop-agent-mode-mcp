@@ -33,6 +33,23 @@
 | **Step 2** | **Agent Mode 進階 + Rollback** | 加上深色模式與篩選功能;**刻意把專案弄壞,再用 4 種方法救回來** |
 | **Step 3** | **MCP Integration** | 接上 Microsoft Learn MCP 讓 AI 查官方文件;接上 GitHub MCP 讓 AI 讀你的 issue |
 | **Step 4** | **Agentic Workflows** | 寫一份可重複執行的劇本,讓 AI **自動讀 issue → 修好 → 開 PR** |
+| **Step 5** | **結業與獎勵** | 合併 PR 解鎖官方成就徽章、把作品部署上線、建立作品集頁 |
+
+---
+
+## 🏅 完成後你會拿到什麼
+
+這不是一堂「聽完就忘」的課。完成後你會帶走三樣**留在你 GitHub 帳號上**的東西:
+
+| | 獎勵 | 說明 |
+| :---: | :--- | :--- |
+| 🏅 | **工作坊官方認證徽章** | 與 GitHub 官方合作發放,**直接顯示在你的個人資料上**<br>*(發放方式協調中,依完成登記名單發送)* |
+| 🦈 | **GitHub Achievements** | GitHub 官方內建成就:合併 PR 解鎖 **YOLO**,再修一個 issue 解鎖 **Pull Shark** |
+| 🌐 | **你的作品** | 一個公開網址(GitHub Pages)+ 一份作品集頁,**可以直接放進履歷** |
+
+> ⚠️ **想拿 GitHub Achievements,你的 repo 必須設為 Public** —— GitHub 只計算公開 repo 的活動。
+>
+> 📖 完整條件、領取方式與疑難排解:**[docs/badges.md](docs/badges.md)**
 
 ---
 
@@ -87,6 +104,7 @@ git clone https://github.com/<你的帳號>/<你的repo名稱>.git
 | `git push` 被拒絕、issue 沒出現、關卡沒推進 | **[docs/troubleshooting.md](docs/troubleshooting.md)** |
 | Copilot 額度用完了 | **[solutions/](solutions/)** — 每一關的完整解答,複製就能過關 |
 | 想確認自己學會了 | **[docs/quiz.md](docs/quiz.md)** — 五題測驗與詳解 |
+| 徽章沒出現、想知道怎麼領 | **[docs/badges.md](docs/badges.md)** — 徽章與成果指南 |
 
 > 🔑 **最重要的兩件事**(現場最常出問題的地方):
 > 1. **每次 push 前先 `git pull --rebase`** —— 機器人會 commit 東西回 main,不先拉下來一定會被拒絕。
@@ -97,6 +115,8 @@ git clone https://github.com/<你的帳號>/<你的repo名稱>.git
 ## 🧑‍🏫 講師資源
 
 - **[docs/facilitator.md](docs/facilitator.md)** — 講師手冊:說明段大綱、時間控制點、Demo 腳本、現場備援方案
+- **[docs/instructor-data.md](docs/instructor-data.md)** — 教學方取得的資訊:完成名單、學員作品、成效數據,以及怎麼匯出
+- **[scripts/export-completions.mjs](scripts/export-completions.mjs)** — 一行指令把完成登記匯出成 CSV 與學員成果牆
 
 ---
 

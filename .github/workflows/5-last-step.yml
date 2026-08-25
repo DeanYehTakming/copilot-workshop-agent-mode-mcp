@@ -1,14 +1,11 @@
-name: Step 4 # Last step of the exercise
+name: Step 5 # Last step of the exercise
 
 on:
   push:
     branches:
       - main
     paths:
-      - '.github/copilot-instructions.md'
-      - '.github/copilot-instructions/**'
-      - '.github/prompts/**'
-      - '.github/agents/**'
+      - 'PORTFOLIO.md'
   # 保險機制:卡關時可以到 Actions 頁籤手動執行這支 workflow 強制推進
   workflow_dispatch:
 
@@ -63,19 +60,12 @@ jobs:
 
       # START: 檢查這一關的產出
 
-      - name: Check if copilot-instructions.md exists
-        id: check-instructions
+      - name: Check if PORTFOLIO.md exists
+        id: check-portfolio
         continue-on-error: true
         uses: skills/exercise-toolkit/actions/file-exists@v0.9.3
         with:
-          file: '.github/copilot-instructions.md'
-
-      - name: Check if fix-issue.prompt.md exists
-        id: check-prompt-file
-        continue-on-error: true
-        uses: skills/exercise-toolkit/actions/file-exists@v0.9.3
-        with:
-          file: '.github/prompts/fix-issue.prompt.md'
+          file: 'PORTFOLIO.md'
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -86,12 +76,10 @@ jobs:
           edit-mode: replace
           file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           vars: |
-            step_number: 4
+            step_number: 5
             results_table:
-              - description: "建立了 .github/copilot-instructions.md"
-                passed: ${{ steps.check-instructions.outcome == 'success' }}
-              - description: "建立了 .github/prompts/fix-issue.prompt.md"
-                passed: ${{ steps.check-prompt-file.outcome == 'success' }}
+              - description: "建立了 PORTFOLIO.md 作品集"
+                passed: ${{ steps.check-portfolio.outcome == 'success' }}
 
       # END: 檢查這一關的產出
 
@@ -100,9 +88,68 @@ jobs:
         if: github.event_name != 'workflow_dispatch' && contains(steps.*.outcome, 'failure')
         run: exit 1
 
+  report_achievements:
+    name: Report repo stats for badges
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: Summarise merged PRs, Pages and visibility
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+
+            const { data: repoInfo } = await github.rest.repos.get({ owner, repo });
+            const isPublic = !repoInfo.private;
+
+            const prs = await github.paginate(github.rest.pulls.list, {
+              owner, repo, state: 'closed', per_page: 100,
+            });
+            const merged = prs.filter((pr) => pr.merged_at);
+            const mergedToMain = merged.filter((pr) => pr.base.ref === repoInfo.default_branch);
+
+            let pagesUrl = null;
+            try {
+              const { data: pages } = await github.rest.repos.getPages({ owner, repo });
+              pagesUrl = pages.html_url;
+            } catch (error) {
+              // Pages 尚未啟用,屬於正常情況
+            }
+
+            const tick = (ok) => (ok ? '✅' : '⬜');
+            const yolo = mergedToMain.length >= 1 && isPublic;
+            const pullShark = mergedToMain.length >= 2 && isPublic;
+
+            const lines = [
+              '## 🏅 徽章條件檢查',
+              '',
+              '這是系統幫你檢查的結果,對照 [徽章指南](https://github.com/' + owner + '/' + repo + '/blob/main/docs/badges.md) 看還差什麼。',
+              '',
+              '| 項目 | 狀態 | 說明 |',
+              '| :--- | :---: | :--- |',
+              '| repo 是公開的 | ' + tick(isPublic) + ' | GitHub Achievements **只計算公開 repo**,私有 repo 不算 |',
+              '| 已合併進 `' + repoInfo.default_branch + '` 的 PR | ' + tick(mergedToMain.length >= 1) + ' | 目前 **' + mergedToMain.length + '** 個 |',
+              '| **YOLO** 徽章條件 | ' + tick(yolo) + ' | 需要:公開 repo + 至少 1 個自行合併(未經他人審查)的 PR |',
+              '| **Pull Shark** 徽章條件 | ' + tick(pullShark) + ' | 需要:公開 repo + 至少 2 個已合併的 PR |',
+              '| GitHub Pages 已啟用 | ' + tick(Boolean(pagesUrl)) + ' | ' + (pagesUrl ? '你的作品網址:' + pagesUrl : '尚未啟用,見 Step 5 的說明') + ' |',
+              '',
+              '> ⚠️ 徽章不會即時出現,通常需要數分鐘到數小時。',
+              '> 也請確認 [個人設定](https://github.com/settings/profile) 裡的 **Show Achievements on my profile** 有勾選。',
+            ];
+
+            await github.rest.issues.createComment({
+              owner, repo,
+              issue_number: Number(process.env.ISSUE_NUMBER),
+              body: lines.join('\n'),
+            });
+
   post_review_content:
     name: Post review content
-    needs: [find_exercise, check_step_work]
+    needs: [find_exercise, check_step_work, report_achievements]
     runs-on: ubuntu-latest
     env:
       ISSUE_REPOSITORY: ${{ github.repository }}
