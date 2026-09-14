@@ -25,31 +25,31 @@ jobs:
     with:
       exercise-title: "GitHub Copilot 實戰工作坊:Agent Mode × MCP × Agentic Workflows"
       intro-message: |
-        歡迎來到 GitHub Copilot 實戰工作坊!👋
-
-        接下來的 120 分鐘,你會親手完成三件事:
-        1. **Agent Mode** — 用一段提示詞讓 AI 從零建出一個待辦清單網頁 App
-        2. **MCP Integration** — 讓 AI 能查 Microsoft 官方文件、讀你自己的 GitHub issue
-        3. **Agentic Workflows** — 寫一份劇本,讓 AI 自動讀 issue → 修好 → 開 PR
-
-        > 🟢 不需要程式基礎,每一步都有可直接複製的提示詞與指令
-        > 🟢 GitHub Copilot **免費版**就能完成
-        > 🟢 做壞了隨時可以還原,我們有一整關在教這件事
-
-        **開始之前請先看這幾份文件:**
-        - 📅 [議程與配速](https://github.com/${{ github.repository }}/blob/main/AGENDA.md)
-        - ⚙️ [環境檢查清單](https://github.com/${{ github.repository }}/blob/main/docs/00-setup.md)
-        - 🔄 [還原指南(做壞了怎麼救)](https://github.com/${{ github.repository }}/blob/main/docs/rollback.md)
-        - 🆘 [疑難排解](https://github.com/${{ github.repository }}/blob/main/docs/troubleshooting.md)
-        - 📦 [解答區(卡關或額度用完時用)](https://github.com/${{ github.repository }}/blob/main/solutions/README.md)
-
-        **第一件事:把這個 repo clone 到你的電腦上,並用 VS Code 打開。**
-
-        ```
-        git clone https://github.com/${{ github.repository }}.git
-        ```
-
-        準備好了就往下看 Step 1 吧!🚀
+        "歡迎來到 GitHub Copilot 實戰工作坊!👋\n
+        \n
+        接下來的 120 分鐘,你會親手完成三件事:\n
+        1. **Agent Mode** — 用一段提示詞讓 AI 從零建出一個待辦清單網頁 App\n
+        2. **MCP Integration** — 讓 AI 能查 Microsoft 官方文件、讀你自己的 GitHub issue\n
+        3. **Agentic Workflows** — 寫一份劇本,讓 AI 自動讀 issue → 修好 → 開 PR\n
+        \n
+        > 🟢 不需要程式基礎,每一步都有可直接複製的提示詞與指令\n
+        > 🟢 GitHub Copilot **免費版**就能完成\n
+        > 🟢 做壞了隨時可以還原,我們有一整關在教這件事\n
+        \n
+        **開始之前請先看這幾份文件:**\n
+        - 📅 [議程與配速](https://github.com/${{ github.repository }}/blob/main/AGENDA.md)\n
+        - ⚙️ [環境檢查清單](https://github.com/${{ github.repository }}/blob/main/docs/00-setup.md)\n
+        - 🔄 [還原指南(做壞了怎麼救)](https://github.com/${{ github.repository }}/blob/main/docs/rollback.md)\n
+        - 🆘 [疑難排解](https://github.com/${{ github.repository }}/blob/main/docs/troubleshooting.md)\n
+        - 📦 [解答區(卡關或額度用完時用)](https://github.com/${{ github.repository }}/blob/main/solutions/README.md)\n
+        \n
+        **第一件事:把這個 repo clone 到你的電腦上,並用 VS Code 打開。**\n
+        \n
+        ```\n
+        git clone https://github.com/${{ github.repository }}.git\n
+        ```\n
+        \n
+        準備好了就往下看 Step 1 吧!🚀"
 
   post_next_step_content:
     name: Post next step content
