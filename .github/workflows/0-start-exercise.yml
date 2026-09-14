@@ -25,7 +25,7 @@ jobs:
     with:
       exercise-title: "GitHub Copilot 實戰工作坊:Agent Mode × MCP × Agentic Workflows"
       intro-message: |
-        歡迎來到 GitHub Copilot 實戰工作坊!👋
+        "歡迎來到 GitHub Copilot 實戰工作坊!👋
 
         接下來的 120 分鐘,你會親手完成三件事:
         1. **Agent Mode** — 用一段提示詞讓 AI 從零建出一個待辦清單網頁 App
@@ -49,7 +49,7 @@ jobs:
         git clone https://github.com/${{ github.repository }}.git
         ```
 
-        準備好了就往下看 Step 1 吧!🚀
+        準備好了就往下看 Step 1 吧!🚀"
 
   post_next_step_content:
     name: Post next step content
