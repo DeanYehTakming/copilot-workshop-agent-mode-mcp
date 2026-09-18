@@ -45,12 +45,13 @@ Copilot 免費版的 **chat 與 agent 使用量是有限的**(每月固定額度
 
 ## 三、安裝 VS Code 擴充套件
 
+> ⚠️ 前置檢查：請務必先更新 VS Code！最新版本的 GitHub Copilot 相關功能已直接整合至 VS Code 核心中。為了確保你能順利體驗最新介面，請先點擊左下角齒輪 ⚙️ 選擇「檢查更新 (Check for Updates)」，更新並重啟軟體。
+
 在 VS Code 按 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> 打開擴充套件面板,搜尋並安裝:
 
 | 擴充套件 | 發行者 | 必要性 |
 | :--- | :--- | :---: |
-| **GitHub Copilot** | GitHub | ✅ 必要 |
-| **GitHub Copilot Chat** | GitHub | ✅ 必要 |
+| **GitHub Copilot Chat** | GitHub |💡 自動附帶：可以看是否為最新版本 |
 | **Live Preview** | Microsoft | 🔸 建議(能在 VS Code 內直接預覽網頁) |
 
 安裝完成後,**在 VS Code 左下角的帳號圖示登入你的 GitHub 帳號**。
