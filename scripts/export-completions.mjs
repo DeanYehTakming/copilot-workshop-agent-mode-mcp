@@ -62,7 +62,7 @@ const FIELD_MAP = {
   '你的作品 repo 網址': 'repoUrl',
   'GitHub Pages 作品網址': 'pagesUrl',
   '你完成到第幾關?': 'completedStep',
-  'Q1. Agent Mode 與 Ask / Edit 模式最大的差別是什麼?': 'q1',
+  'Q1. Agent Mode 與 Ask / Plan 模式最大的差別是什麼?': 'q1',
   'Q2. 關於 MCP,下列敘述何者正確?': 'q2',
   'Q3. Agent 改壞了程式且尚未 commit,最快的還原方式是?': 'q3',
   'Q4. 下列哪一項最能描述 Agentic Workflow?': 'q4',
