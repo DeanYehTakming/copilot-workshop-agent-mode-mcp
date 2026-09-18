@@ -127,7 +127,7 @@ body:
   - type: dropdown
     id: q1
     attributes:
-      label: "Q1. Agent Mode 與 Ask / Edit 模式最大的差別是什麼?"
+      label: "Q1. Agent Mode 與 Ask / Plan 模式最大的差別是什麼?"
       options:
         - A. Agent Mode 只是回答速度比較快
         - B. Agent Mode 一次只能修改一個檔案
